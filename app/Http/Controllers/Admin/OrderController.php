@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
+use App\Http\Requests\UpdateOrderRequest;
+use App\Models\Order;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
+class OrderController extends Controller
+{
+    public function index()
+    {
+        $orders = Order::query()->latest()->paginate();
+
+        return view('admin.orders.index', compact('orders'));
+    }
+
+    public function edit(Order $order)
+    {
+        return view('admin.orders.edit', compact('order'));
+    }
+
+    public function update(UpdateOrderRequest $request, Order $order)
+    {
+        $user = $request->user();
+        DB::transaction(function () use ($request, $order, $user) {
+            $order->update($request->all());
+
+            if ($request->status == Order::CANCELLED) {
+                $user->update(['balance' => $user->balance + $order->total]);
+            }
+        });
+
+        return to_route('admin.orders.index')->with('success', 'Cập nhật đơn hàng thành công');
+    }
+
+    public function getFreeLike(Request $request) {
+        $order_info = Order::find($request->id);
+        if (!$order_info) return to_route('admin.orders.index')->with('error', 'Không tìm thấy thông tin đơn hàng!');
+        else dd($order_info);
+    }
+}
