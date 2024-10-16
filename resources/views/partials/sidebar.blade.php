@@ -84,6 +84,13 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="collapse menu-dropdown {{ Request::routeIs('tools.*') ? 'show' : '' }}" id="tools">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="{{ route('tools.get-facebook-id-v2') }}" class="nav-link {{ Request::routeIs('tools.get-facebook-id-v2') ? 'active' : '' }}">Lấy ID Facebook V2</a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
                 @if($sidebarCategories->count() > 0)
                     <li class="menu-title"><span>{{ __('Services') }}</span></li>

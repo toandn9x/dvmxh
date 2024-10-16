@@ -55,6 +55,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'tools', 'as' => 'tools.'], function () {
         Route::get('/get-facebook-id', [ToolController::class, 'getFacebookId'])->name('get-facebook-id');
         Route::post('/get-facebook-id', [ToolController::class, 'postFacebookId']);
+        Route::get('/get-facebook-id-v2', [ToolController::class, 'getFacebookIdV2'])->name('get-facebook-id-v2');
+        Route::post('/get-facebook-id-v2', [ToolController::class, 'postFacebookIdV2']);
     });
 
     // ticket

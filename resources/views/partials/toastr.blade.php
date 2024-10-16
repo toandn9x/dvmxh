@@ -1,4 +1,4 @@
-@if($errors->any() || session('success'))
+@if($errors->any() || session('success') || session('error'))
     @push('css')
         <link rel="stylesheet" href="{{ asset('assets/libs/toastify-js/toastify-js.min.css') }}">
     @endpush

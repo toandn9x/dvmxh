@@ -37,6 +37,11 @@ Breadcrumbs::for('tools.get-facebook-id', function (BreadcrumbsTrait $trail) {
     $trail->push('Lấy ID Facebook', route('tools.get-facebook-id'));
 });
 
+Breadcrumbs::for('tools.get-facebook-id-v2', function (BreadcrumbsTrait $trail) {
+    $trail->parent('tools');
+    $trail->push('Lấy ID Facebook V2', route('tools.get-facebook-id-v2'));
+});
+
 Breadcrumbs::for('ticket', function (BreadcrumbsTrait $trail) {
     $trail->parent('home');
     $trail->push('Hỗ trợ');
