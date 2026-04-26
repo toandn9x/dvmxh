@@ -77,7 +77,7 @@ class SettingController extends Controller
 
             return response()->json([
                 'status' => 'success',
-                'message' => 'Đồng bộ dịch vụ thành công với mức lợi nhuận ' . $profit . '%'
+                'message' => 'Đồng bộ dịch vụ thành công với mức lợi nhuận cơ bản ' . $profitMember . '%'
             ]);
         } catch (\Exception $e) {
             return response()->json([
