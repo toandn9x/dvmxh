@@ -21,3 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/webhooks/bank-transfer', [\App\Http\Controllers\Api\WebhookController::class, 'bankTransfer']);
 
 Route::any('/v2', [\App\Http\Controllers\Api\ResellerController::class, 'index']);
+
+// Mock SMM Provider for Testing
+Route::any('/mock-provider', [\App\Http\Controllers\MockSmmController::class, 'handle']);

@@ -32,6 +32,7 @@ Route::group(['middleware' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/smm', [SettingController::class, 'smm'])->name('smm');
         Route::post('/smm/sync', [SettingController::class, 'syncSmm'])->name('smm.sync');
         Route::get('/levels', [SettingController::class, 'levels'])->name('levels');
+        Route::get('/mock-test', function() { return view('admin.settings.mock_test'); })->name('mock-test');
         Route::post('/store', [SettingController::class, 'store'])->name('store');
     });
 

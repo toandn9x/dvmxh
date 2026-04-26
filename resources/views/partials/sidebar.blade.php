@@ -232,6 +232,10 @@
                                         class="nav-link {{ Request::routeIs('admin.settings.smm') ? 'active' : '' }}">Cấu
                                         hình SMM API</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a href="{{ route('admin.settings.mock-test') }}"
+                                        class="nav-link {{ Request::routeIs('admin.settings.mock-test') ? 'active' : '' }}">Test Mock API</a>
+                                </li>
                             </ul>
                         </div>
                     </li>

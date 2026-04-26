@@ -220,3 +220,5 @@ Breadcrumbs::for('admin.settings.levels', function (BreadcrumbsTrait $trail) {
 Breadcrumbs::for('admin.queue.index', function ($trail) { $trail->parent('home'); $trail->push('Qu?n lý Worker', route('admin.queue.index')); });
 
 Breadcrumbs::for('admin.orders.cancelled', function ($trail) { $trail->parent('home'); $trail->push('Ðon dã h?y', route('admin.orders.cancelled')); });
+
+Breadcrumbs::for('admin.settings.mock-test', function ($trail) { $trail->parent('home'); $trail->push('Test Mock API', route('admin.settings.mock-test')); });
