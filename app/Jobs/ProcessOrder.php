@@ -63,6 +63,8 @@ class ProcessOrder implements ShouldQueue
                 $order->update([
                     'api_response' => json_encode($response),
                     'status' => Order::CANCELLED,
+                    'cancel_reason' => $response['error'] ?? 'API Provider returned unknown error',
+                    'cancelled_by' => 'api',
                     'note' => 'API Provider Error: ' . ($response['error'] ?? 'Unknown error'),
                 ]);
                 

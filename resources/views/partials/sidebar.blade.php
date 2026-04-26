@@ -188,9 +188,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link menu-link {{ Request::routeIs('admin.orders.*') ? 'active' : '' }}"
+                        <a class="nav-link menu-link {{ Request::routeIs('admin.orders.index') ? 'active' : '' }}"
                             href="{{ route('admin.orders.index') }}">
                             <i class="mdi mdi-cart-outline"></i> <span>Đơn dịch vụ</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link {{ Request::routeIs('admin.orders.cancelled') ? 'active' : '' }}"
+                            href="{{ route('admin.orders.cancelled') }}">
+                            <i class="mdi mdi-cart-remove"></i> <span>Đơn đã hủy</span>
                         </a>
                     </li>
                     <li class="nav-item">

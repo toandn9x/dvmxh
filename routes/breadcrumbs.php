@@ -217,4 +217,6 @@ Breadcrumbs::for('admin.settings.levels', function (BreadcrumbsTrait $trail) {
     $trail->push('C?u hình C?p d? & Thông báo');
 });
 
-Breadcrumbs::for('admin.queue.index', function (\) { \->parent('home'); \->push('Qu?n lý Worker', route('admin.queue.index')); });
+Breadcrumbs::for('admin.queue.index', function ($trail) { $trail->parent('home'); $trail->push('Qu?n lý Worker', route('admin.queue.index')); });
+
+Breadcrumbs::for('admin.orders.cancelled', function ($trail) { $trail->parent('home'); $trail->push('Ðon dã h?y', route('admin.orders.cancelled')); });
