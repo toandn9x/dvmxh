@@ -216,3 +216,5 @@ Breadcrumbs::for('admin.settings.levels', function (BreadcrumbsTrait $trail) {
     $trail->parent('admin.settings');
     $trail->push('C?u hình C?p d? & Thông báo');
 });
+
+Breadcrumbs::for('admin.queue.index', function (\) { \->parent('home'); \->push('Qu?n lý Worker', route('admin.queue.index')); });

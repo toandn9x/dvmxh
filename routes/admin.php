@@ -32,4 +32,11 @@ Route::group(['middleware' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/levels', [SettingController::class, 'levels'])->name('levels');
         Route::post('/store', [SettingController::class, 'store'])->name('store');
     });
+
+    Route::group(['prefix' => 'queue', 'as' => 'queue.'], function () {
+        Route::get('/', [\App\Http\Controllers\Admin\QueueController::class, 'index'])->name('index');
+        Route::post('/retry/{id}', [\App\Http\Controllers\Admin\QueueController::class, 'retry'])->name('retry');
+        Route::delete('/delete-failed/{id}', [\App\Http\Controllers\Admin\QueueController::class, 'deleteFailed'])->name('delete-failed');
+        Route::post('/flush', [\App\Http\Controllers\Admin\QueueController::class, 'flush'])->name('flush');
+    });
 });

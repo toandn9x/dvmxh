@@ -229,6 +229,12 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu-link {{ Request::routeIs('admin.queue.*') ? 'active' : '' }}"
+                            href="{{ route('admin.queue.index') }}">
+                            <i class="ri-pulse-line"></i> <span>Quản lý Worker</span>
+                        </a>
+                    </li>
                 @endif
             </ul>
         </div>
