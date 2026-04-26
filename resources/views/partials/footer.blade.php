@@ -6,7 +6,7 @@
             </div>
             <div class="col-sm-6">
                 <div class="text-sm-end d-none d-sm-block">
-                    Phát triển bởi <a href="https://toandn266.github.io/" target="_blank">Đinh Nguyễn Tuấn Toàn</a>
+                    Phát triển bởi <a href="https://toandn266.github.io/" target="_blank">Toandn</a>
                 </div>
             </div>
         </div>
