@@ -1,0 +1,63 @@
+services:
+
+  # PHP Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        user: sammy
+        uid: 1000
+    image: social-service-app
+    container_name: social-service-app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    networks:
+      - social-service-network
+
+  # Queue Worker
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        user: sammy
+        uid: 1000
+    image: social-service-app
+    container_name: social-service-worker
+    restart: unless-stopped
+    command: php artisan queue:work --tries=3
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+    depends_on:
+      - redis
+    networks:
+      - social-service-network
+
+  # Nginx Service
+  nginx:
+    image: nginx:alpine
+    container_name: social-service-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - social-service-network
+
+  # Redis Service
+  redis:
+    image: redis:alpine
+    container_name: social-service-redis
+    restart: unless-stopped
+    networks:
+      - social-service-network
+
+networks:
+  social-service-network:
+    driver: bridge

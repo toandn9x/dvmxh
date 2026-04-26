@@ -1,0 +1,100 @@
+.btn { box-shadow: none !important; }
+
+/* Premium Dashboard Cards */
+.card-animate {
+    transition: all 0.3s ease-in-out;
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+}
+
+.card-animate:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+}
+
+/* Glassmorphism Sidebar */
+.navbar-menu {
+    backdrop-filter: blur(10px);
+}
+
+/* Gradients for Level badges */
+.bg-gradient-vip {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%) !important;
+}
+
+.bg-gradient-collab {
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%) !important;
+}
+
+/* Modern Service Icons */
+.service-icon-box {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: rgba(var(--vz-primary-rgb), 0.1);
+    color: var(--vz-primary);
+    font-size: 24px;
+    margin-bottom: 15px;
+    transition: all 0.3s;
+}
+
+.card-animate:hover .service-icon-box {
+    background: var(--vz-primary);
+    color: #fff;
+}
+
+/* Breadcrumb Styling */
+.breadcrumb-item a {
+    color: var(--vz-primary);
+    font-weight: 500;
+}
+
+.breadcrumb-item.active {
+    color: var(--vz-gray-600);
+}
+
+/* Sidebar Menu Tweaks */
+.navbar-menu .nav-link {
+    transition: all 0.2s ease-in-out !important;
+}
+
+[data-sidebar="dark"] .navbar-menu .nav-link {
+    color: #abb9e8 !important;
+}
+
+[data-sidebar="dark"] .navbar-menu .nav-link:hover {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-sidebar="dark"] .navbar-menu .nav-link.active {
+    color: #ffffff !important;
+    background-color: var(--vz-primary) !important;
+}
+
+/* Light sidebar support */
+[data-sidebar="light"] .navbar-menu .nav-link {
+    color: var(--vz-vertical-menu-item-color) !important;
+}
+
+[data-sidebar="light"] .navbar-menu .nav-link:hover {
+    color: var(--vz-primary) !important;
+    background-color: rgba(var(--vz-primary-rgb), 0.05) !important;
+}
+
+.navbar-menu .nav-link i {
+    font-size: 18px !important;
+    margin-right: 10px;
+    color: inherit !important;
+}
+
+/* Progress Wizard */
+.progress-nav { position: relative; }
+.progress-wizard { position: absolute; top: -15px; width: 100%; padding: 0; margin: 0; }
+.progress-wizard .nav-link { width: 32px; height: 32px; padding: 0; line-height: 32px; background: #fff; border: 1px solid #e9ebec; color: #495057; font-weight: 500; }
+.progress-wizard .nav-link.active { background: var(--vz-primary); color: #fff; border-color: var(--vz-primary); }
+.progress-wizard .nav-link.done { background: var(--vz-success); color: #fff; border-color: var(--vz-success); }
